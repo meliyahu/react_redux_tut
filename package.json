@@ -4,7 +4,8 @@
   "description": "Redux Starter Project",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js"
+    "start": "webpack-dev-server --config ./webpack.config.js",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "Moshe EliYahu",
@@ -13,5 +14,12 @@
     "webpack": "4.41.6",
     "webpack-cli": "3.3.11",
     "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "immer": "^7.0.7",
+    "immutable": "^4.0.0-rc.12",
+    "lodash": "^4.17.19",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8"
   }
 }
