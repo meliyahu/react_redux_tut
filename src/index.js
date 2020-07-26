@@ -1,15 +1,19 @@
-import store from "./store";
-import * as actions from "./actionTypes";
-import * as actionCreator from "./actions";
+import configureStore from "./store/configureStore";
+import * as actions from "./store/bugs";
 
 // const unsubscribe = store.subscribe(() => {
 //   console.log("Store changed!", store.getState());
 // });
+const store = configureStore();
 
-store.dispatch(actionCreator.bugAdded("Bug1"));
-store.dispatch(actionCreator.bugAdded("Bug2"));
-store.dispatch(actionCreator.bugAdded("Bug3"));
+store.subscribe(() => {
+  console.log("Store changed!");
+});
+store.dispatch(actions.bugAdded("Bug1"));
+store.dispatch(actions.bugAdded("Bug2"));
+store.dispatch(actions.bugAdded("Bug3"));
 
-store.dispatch(actionCreator.bugResolved(1));
+store.dispatch(actions.bugResolved(1));
+console.log("store: ", store.getState());
 
 //unsubscribe();
